@@ -1,0 +1,8 @@
+<div class="container mt-5">
+    <div class="row">
+        <!-- Using *ngIf to ensure we have the image data before trying to render it -->
+        <div class="col-md-4 mb-4" *ngFor="let img of images">
+            <app-image-card (deleteEvent)="handelDeleteInParent($event)" (downloadEvent)="handleDownloadInParent($event)" [img]="img" ></app-image-card>
+        </div>
+    </div>
+</div>

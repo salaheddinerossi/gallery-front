@@ -1,0 +1,9 @@
+<!-- theme-card.component.html -->
+<div class="card mb-3">
+    <img [src]="theme.image ? theme.image : 'assets/img.png'" class="card-img-top" alt="{{ theme.image ? theme.name : 'No image' }}">
+    <div class="card-body">
+        <h5 class="card-title">{{theme.name}}</h5>
+        <p class="card-text">{{theme.description}}</p>
+        <a [routerLink]="['/theme/', theme.id]" class="btn btn-primary">View Theme</a>
+    </div>
+</div>

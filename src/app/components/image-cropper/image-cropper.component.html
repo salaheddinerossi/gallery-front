@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Image Cropper -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <image-cropper
+                            [imageBase64]="imageSrc"
+                            [maintainAspectRatio]="true"
+                            [aspectRatio]="4/3"
+                            format="jpeg"
+                            (imageCropped)="imageCropped($event)"
+                            (imageLoaded)="imageLoaded()"
+                            (cropperReady)="cropperReady()"
+                            (loadImageFailed)="loadImageFailed()">
+                    </image-cropper>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" (click)="submitCroppedImage()">Create New Image</button>
+                <button class="btn btn-secondary" (click)="handelUpdate()">Modify Current Image</button>
+            </div>
+
+        </div>
+    </div>
+</div>

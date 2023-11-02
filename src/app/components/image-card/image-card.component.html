@@ -1,0 +1,13 @@
+<!-- theme-card.component.html -->
+<div class="card mb-3">
+  <img [src]="img.image ? img.image : 'assets/img.png'" class="card-img-top" >
+  <div class="card-body">
+    <h5>scale : {{img.scale}}</h5>
+    <a (click)="handleDownload(img.id)" class="btn btn-primary">Download </a>
+    <a (click)="handelDelete(img.id)" class="btn btn-danger m-lg-2">Delete</a>
+    <a  [routerLink]="['/image/',img.id]" class="btn btn-success m-lg-2">crop</a>
+    <a  [routerLink]="['/resize/',img.id]" class="btn btn-warning m-lg-2">resize</a>
+    <a  [routerLink]="['/properties/',img.id]" class="btn btn-secondary m-lg-2">properties</a>
+
+  </div>
+</div>

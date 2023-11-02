@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Create a New Theme</h2>
+
+    <form (submit)="onCreateTheme()">
+
+        <div class="form-group">
+            <label for="themetitle">Theme title</label>
+            <input type="text" id="themetitle" [(ngModel)]="theme.name" name="themetitle" required class="form-control" placeholder="Enter theme title">
+        </div>
+
+        <div class="form-group">
+            <label for="themeDescription">Theme Description (optional)</label>
+            <textarea id="themeDescription" [(ngModel)]="theme.description" name="themeDescription" rows="4" class="form-control" placeholder="Describe your theme"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="themeImage">Theme Image</label>
+            <input type="file" id="themeImage" (change)="onImageSelected($event)" class="form-control-file">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Create Theme</button>
+    </form>
+</div>
