@@ -1,26 +1,37 @@
-<div class="vertical-center-wrapper">
+<div >
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-center mb-4">
                 <h2>Image Properties</h2>
             </div>
-            <div class="col-md-8">
-                <div style="display: block;">
-                    <canvas baseChart
-                            [datasets]="barChartData"
-                            [labels]="barChartLabels"
-                            [options]="barChartOptions"
-                            [legend]="barChartLegend">
-                    </canvas>
-                </div>
+          <div class="col-md-8">
+            <div style="display: block;">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="lineChartOptions"
+                      [legend]="barChartLegend"
+                      [type]="lineChartType">
+              </canvas>
             </div>
-            <div class="col-md-4">
-                <h5>Dominant Colors:</h5>
-                <div *ngFor="let color of dominantColors"
-                     [style.background-color]="color"
-                     class="dominant-color-box">
-                </div>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-3">Dominant Colors:</h5>
+            <div class="d-flex flex-wrap mb-4">
+              <div *ngFor="let color of dominantColors" class="dominant-color-box me-2 mb-2" [style.background]="color"></div>
             </div>
+            <h5 class="mb-3">Color Moments:</h5>
+            <div *ngFor="let moment of moments; let i = index" class="mb-3">
+              <div [ngClass]="getColorClass(i)" class="p-3 text-white rounded">
+                <strong>Moment {{i+1}}:</strong>
+                <ul class="list-unstyled mb-0">
+                  <li *ngFor="let key of getObjectKeys(moment)">
+                    {{ key }}: {{ moment[key] }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>

@@ -7,4 +7,5 @@ export interface ImageProperties {
     green: number[];
     blue: number[];
   };
+  color_moments:[]
 }

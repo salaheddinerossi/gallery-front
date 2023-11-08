@@ -1,13 +1,28 @@
-<!-- theme-card.component.html -->
 <div class="card mb-3">
-  <img [src]="img.image ? img.image : 'assets/img.png'" class="card-img-top" >
-  <div class="card-body">
-    <h5>scale : {{img.scale}}</h5>
-    <a (click)="handleDownload(img.id)" class="btn btn-primary">Download </a>
-    <a (click)="handelDelete(img.id)" class="btn btn-danger m-lg-2">Delete</a>
-    <a  [routerLink]="['/image/',img.id]" class="btn btn-success m-lg-2">crop</a>
-    <a  [routerLink]="['/resize/',img.id]" class="btn btn-warning m-lg-2">resize</a>
-    <a  [routerLink]="['/properties/',img.id]" class="btn btn-secondary m-lg-2">properties</a>
-
+  <div class="card-img-container position-relative">
+    <img [src]="img.image ? img.image : 'assets/img.png'" class="card-img-top" alt="Image">
+    <!-- Overlay container for icons -->
+    <div class="position-absolute bottom-0 start-0 p-1" style="z-index: 2;">
+      <!-- Icons with action buttons -->
+      <a (click)="handleDownload(img.id)" class="btn btn-sm btn-primary me-1">
+        <i class="fas fa-download"></i>
+      </a>
+      <a (click)="handelDelete(img.id)" class="btn btn-sm btn-danger me-1">
+        <i class="fas fa-trash-alt"></i>
+      </a>
+      <a [routerLink]="['/image/', img.id]" class="btn btn-sm btn-success me-1">
+        <i class="fas fa-crop"></i>
+      </a>
+      <a [routerLink]="['/resize/', img.id]" class="btn btn-sm btn-warning me-1">
+        <i class="fas fa-text-height"></i>
+      </a>
+      <a [routerLink]="['/properties/', img.id]" class="btn btn-sm btn-secondary me-1">
+        <i class="fas fa-info-circle"></i>
+      </a>
+    </div>
+    <!-- Scale text -->
+    <div class="position-absolute bottom-0 end-0 p-1" style="z-index: 2;">
+      <span class="badge bg-secondary">Scale: {{img.scale}}</span>
+    </div>
   </div>
 </div>

@@ -23,6 +23,8 @@ import { ImageResizerComponent } from './components/image-resizer/image-resizer.
 import { ImagePropertiesComponent } from './components/image-properties/image-properties.component';
 import { NgChartsModule } from 'ng2-charts';
 import { SignupComponent } from './components/signup/signup.component';
+import {NgxMasonryModule} from "ngx-masonry";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { SignupComponent } from './components/signup/signup.component';
     HttpClientModule,
     NgbModule,
     ImageCropperModule,
-    NgChartsModule
+    NgChartsModule,
+    NgxMasonryModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
