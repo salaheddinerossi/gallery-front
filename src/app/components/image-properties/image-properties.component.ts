@@ -76,7 +76,7 @@ export class ImagePropertiesComponent implements OnInit{
     const data = this.imageService.getImageProperties(imageId).subscribe(
       data => {
         this.moments=data.color_moments;
-        console.log(this.moments)
+        console.log(data)
         this.barChartData = [
             { data: data.histogram_colors.red, label: 'Red', borderColor: 'red', fill: false, steppedLine: true },
             { data: data.histogram_colors.green, label: 'Green', borderColor: 'green', fill: false, steppedLine: true },

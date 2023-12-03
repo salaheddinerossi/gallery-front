@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Image} from "../../models/Image";
 import {Router} from "@angular/router";
 import {ImageProperties} from "../../models/ImageProperties";
+import {Comparison} from "../../models/Comparison";
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +86,16 @@ export class ImageService {
 
   getImageProperties(imageId?: string | null){
     return this.http.get<ImageProperties>(`${this.baseURL}properties/${imageId}`,{headers: this.getAuthHeaders()})
+  }
+
+  getSimlialrImages(imageId?: string | null){
+    return this.http.get<Comparison>(`${this.baseURL}similarity/${imageId}`,{headers: this.getAuthHeaders()})
+
+  }
+
+  improveSimilarity(comparison:Comparison){
+    return this.http.post<Comparison>(`${this.baseURL}improve_similarity`,{comparison:comparison},{headers: this.getAuthHeaders()})
+
   }
 
 

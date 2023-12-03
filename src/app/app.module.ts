@@ -25,6 +25,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { SignupComponent } from './components/signup/signup.component';
 import {NgxMasonryModule} from "ngx-masonry";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SearchComponent} from "./components/search/search.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ImageCropperComponent,
     ImageResizerComponent,
     ImagePropertiesComponent,
-    SignupComponent
+    SignupComponent,
+    SearchComponent
 
   ],
   imports: [

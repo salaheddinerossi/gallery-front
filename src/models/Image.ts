@@ -4,6 +4,7 @@ export interface Image{
     userId:string,
     themeId:string,
     image_type?:string,
-    scale?:number
+    scale?:number,
+    isRelevant?:boolean
 
 }
